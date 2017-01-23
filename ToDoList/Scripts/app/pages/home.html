@@ -1,0 +1,28 @@
+﻿<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Manager Tasks <button ng-click="homeVm.add()" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon glyphicon-plus"></i> Add new Task</button></div>
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tasks</th>
+                            <th style="width:130px">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="a in homeVm.assignments">
+                            <td>{{a.Name}}</td>
+                            <td>
+                                <btn ng-click="homeVm.complete(a.Id)" class="btn btn-xs btn-primary"><i ng-hide="a.DateEnd" class="glyphicon glyphicon-unchecked"></i> <i ng-hide="!a.DateEnd" class="glyphicon glyphicon-check"></i></btn>
+                                <btn ng-hide="!a.Attachment" ng-click="homeVm.downloadFile(a.Attachment)" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-download"></i></btn>
+                                <btn ng-click="homeVm.edit(a)" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-pencil"></i></btn>
+                                <btn ng-click="homeVm.remove(a.Id)" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-remove"></i></btn>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

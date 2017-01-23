@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace ToDoList.Models
 {
@@ -16,7 +17,7 @@ namespace ToDoList.Models
             // Add custom user claims here
             return userIdentity;
         }
-    }
+    }    
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -29,5 +30,7 @@ namespace ToDoList.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Assignment> Assignments { get; set; }
     }
 }

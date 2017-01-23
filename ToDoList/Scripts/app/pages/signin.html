@@ -1,0 +1,47 @@
+﻿<div class="container">
+    <div class="col-sm-5 col-sm-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <h4 class="text-center">Access to restricted area</h4>
+                    <hr />
+                </div>
+                <div class="col-sm-12">
+                    <form name="formSignIn" ng-submit="signinVm.signIn()" class="row">     
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" ng-required="true" ng-model="signinVm.username" name="username" placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" ng-required="true" ng-model="signinVm.password" name="password" placeholder="Password">                            
+                        </div>
+
+                        <div class="form-group">
+                            <input class="btn btn-primary pull-right" type="submit" ng-disabled="formSignIn.$invalid" value="Sign In" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-5">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <h2 class="text-center">No have account?</h2>
+                    </div>
+                    <div class="row">
+                        <h3 class="text-center">Make now your account, is fast!</h3>
+                    </div>    
+                    <div class="row text-center" style="margin-top:60px; padding-bottom:50px">
+                        <button type="button" ng-click="signinVm.register()" class="btn btn-lg btn-primary">Make Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

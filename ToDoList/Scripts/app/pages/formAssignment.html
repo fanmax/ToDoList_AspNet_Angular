@@ -1,0 +1,24 @@
+﻿<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Manager Tasks</div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <form name="formAssigment" class="row">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" ng-required="true" ng-model="assignmentVm.assigments.Name" name="Name" placeholder="Name of task">
+                        </div>
+
+                        <div class="form-group">
+                            <label>File</label>
+                            <input type="file" class="form-control" ng-model="assignmentVm.file" ng-files="assignmentVm.getTheFiles($files)">
+                        </div>                        
+                    </form>                                        
+                    <button type="button" ng-disabled="formAssigment.$invalid" ng-click="assignmentVm.save()" class="btn btn-success pull-right" role="button">Save</button>                    
+                    <button type="button" ng-click="assignmentVm.cancel()" class="btn btn-default pull-right" style="margin-right:10px" role="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
