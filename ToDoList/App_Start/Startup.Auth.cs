@@ -9,7 +9,11 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ToDoList.Providers;
-using ToDoList.Models;
+using System.Web.Mvc;
+using ToDoList.Infra.CrossCutting.Identity.Configuration;
+using System.Web.Http;
+using ToDoList.Infra.CrossCutting.Identity.Context;
+using ToDoList.Infra.CrossCutting.Identity.Models;
 
 namespace ToDoList
 {
@@ -22,9 +26,13 @@ namespace ToDoList
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            var context = GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ApplicationDbContext)) as ApplicationDbContext;
+            var manager = GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ApplicationUserManager)) as ApplicationUserManager;
+
+
             // Configure the db context and user manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
+            app.CreatePerOwinContext(() => context);
+            app.CreatePerOwinContext(() => manager);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider

@@ -1,20 +1,18 @@
-namespace ToDoList.Migrations
+namespace ToDoList.Infra.CrossCutting.Identity.Migrations
 {
-    using Infra.CrossCutting.Identity.Context;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ToDoList.Infra.CrossCutting.Identity.Context.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Infra.CrossCutting.Identity.Context.ApplicationDbContext";
         }
 
-        protected override void Seed(ApplicationDbContext context)
+        protected override void Seed(ToDoList.Infra.CrossCutting.Identity.Context.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

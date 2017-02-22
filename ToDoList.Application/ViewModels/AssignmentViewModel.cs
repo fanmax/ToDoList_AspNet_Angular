@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ToDoList.Models
+namespace ToDoList.Application.ViewModels
 {
     public class AssignmentViewModel
     {
@@ -12,10 +13,9 @@ namespace ToDoList.Models
         [Required]
         public string Name { get; set; }
         public string Attachment { get; set; }
-
         public DateTime DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
 
-        public string UsuarioId { get; set; }
+        public string UserId { get; set; }
     }
 }

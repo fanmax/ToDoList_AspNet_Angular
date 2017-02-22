@@ -1,14 +1,17 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using ToDoList.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ToDoList.Infra.CrossCutting.Identity.Context;
+using ToDoList.Infra.CrossCutting.Identity.Models;
 
-namespace ToDoList
+namespace ToDoList.Infra.CrossCutting.Identity.Configuration
 {
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         public ApplicationUserManager(IUserStore<ApplicationUser> store)

@@ -9,7 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ToDoList.Models;
+using ToDoList.Infra.CrossCutting.Identity.Configuration;
+using ToDoList.Infra.CrossCutting.Identity.Models;
+using System.Web.Http;
 
 namespace ToDoList.Providers
 {
@@ -29,7 +31,7 @@ namespace ToDoList.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            var userManager = GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(ApplicationUserManager)) as ApplicationUserManager;
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 

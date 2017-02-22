@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace ToDoList.Models
+namespace ToDoList.Domain.Entities
 {
     public class Assignment
     {
@@ -14,10 +14,10 @@ namespace ToDoList.Models
         public DateTime DateStart { get; set; }
         public DateTime? DateEnd { get; set; }        
 
-        public string UsuarioId { get; set; }
+        public string UserId { get; set; }
 
 
-        [ForeignKey("UsuarioId")]
-        public virtual ApplicationUser Usuario { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }
