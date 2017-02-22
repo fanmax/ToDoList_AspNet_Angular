@@ -8,3 +8,11 @@ Project using
 - AngularJs
 - Bootstrap
 - IziToast
+
+Architecture DDD
+
+Demo: http://todolistportilio.azurewebsites.net
+
+Email: demo@demo.com
+
+Password: Demo@demo
