@@ -98,11 +98,7 @@ namespace ToDoList.App_Start
             kernel.Bind<AccountController>()
                 .ToSelf()
                 .WithConstructorArgument("userManager", kernel.Get<UserManager<ApplicationUser>>())
-                .WithConstructorArgument("accessTokenFormat", kernel.Get <ISecureDataFormat<AuthenticationTicket>>());
-
-            kernel.Bind<AccountController>()
-                .ToSelf()
-                .WithConstructorArgument("assignmmentService", kernel.Get<IAssignmentService>());                
+                .WithConstructorArgument("accessTokenFormat", kernel.Get <ISecureDataFormat<AuthenticationTicket>>());                  
             #endregion
         }
     }

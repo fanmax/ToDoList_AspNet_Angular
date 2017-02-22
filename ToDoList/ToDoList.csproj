@@ -1060,6 +1060,8 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <None Include="Properties\PublishProfiles\todolistportilio - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\todolistportilio - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\iziToast.js" />
     <Content Include="Scripts\iziToast.min.js" />
